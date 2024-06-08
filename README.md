@@ -3,11 +3,13 @@ This program is written in JavaScript.
 To run using Docker:
 1. Build the Docker image:
     in your bash:
+   
       docker build -t my-node-app .
     
 
-2. Run the Docker container:
-    in your bash
+3. Run the Docker container:
+    in your bash:
+   
       docker run -p 8080:8080 my-node-app
     
 
