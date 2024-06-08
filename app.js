@@ -41,7 +41,7 @@ function calculatePoints(receipt) {
         }
         points += count;
     } else {
-        return { error: 'Receipt retailer is missing or not in the correct format' };
+        return res.status(400).json({ error: 'Receipt retailer is missing or not in the correct format' });
     }
 
     // 50 points if the total is a round dollar amount with no cents.
@@ -56,7 +56,7 @@ function calculatePoints(receipt) {
 
     // 5 points for every two items on the receipt.
     if (!receipt.items || !Array.isArray(receipt.items)) {
-        return { error: 'Receipt items are missing or not in the correct format' };
+        return res.status(400).json({ error: 'Receipt items are missing or not in the correct format' });
     }
     points += Math.floor(receipt.items.length / 2) * 5;
 
@@ -82,7 +82,7 @@ function calculatePoints(receipt) {
     return points;
 }
 
-const PORT = 8080;
+const PORT = 8081;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
