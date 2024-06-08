@@ -12,6 +12,7 @@ To run using Docker:
     
 
 I used curl to test the endpoints:
+
 curl -X POST -H "Content-Type: application/json" -d '{
   "retailer": "Target",
   "purchaseDate": "2022-01-01",
