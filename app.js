@@ -14,7 +14,7 @@ app.post('/receipts/process', (req, res) => {
     const points = calculatePoints(receipt);
     receiptPoints[id] = points;
 
-    console.log('Response:', points);
+    console.log('id: ', id);
     res.json({ id });
 });
 
